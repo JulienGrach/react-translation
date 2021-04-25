@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { TFNames, TFs, TranslationVariables, UseTranslationHook } from '../types';
 import { BOLD_TAG, DEFAULT_TF_NAME, ITALIC_TAG, REGEX_HTML_TAGS } from '../constants';
 import { useLanguageContext } from '../context';
-import { createMarkup, importTF, translate, errorForbiddenHtmlTags } from '../utils';
+import { TFNames, TFs } from '../types/translationFiles.types';
+import { TranslationVariables, UseTranslationHook } from '../types/useTranslation.types';
+import { importTF } from '../utils/translationFiles.utils';
+import { errorForbiddenHtmlTags } from '../utils/errors.utils';
+import { translate } from '../utils/translation.utils';
+import { createMarkup } from '../utils/html.utils';
 
 export const useTranslation = (tFNames: TFNames = [DEFAULT_TF_NAME]): UseTranslationHook => {
     const { language } = useLanguageContext();

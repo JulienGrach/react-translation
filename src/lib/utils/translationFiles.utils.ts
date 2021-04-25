@@ -1,5 +1,6 @@
-import { Language, TF, TFImported, TFName } from '../types';
 import { TFS_DIR_NAME } from '../constants';
+import { TF, TFImported, TFName } from '../types/translationFiles.types';
+import { Language } from '../types/language.types';
 
 export const importTF = async (language: Language, tFName: TFName): Promise<TF> => {
     try {

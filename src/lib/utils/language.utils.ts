@@ -1,5 +1,5 @@
-import { Language, LanguageContextConfig } from '../types';
 import { DEFAULT_QUERY_PARAM } from '../constants';
+import { Language, LanguageContextConfig } from '../types/language.types';
 
 export const updateLanguageQueryParam = (value: Language): void => {
     const queryParams = new URLSearchParams(window.location.search);

@@ -1,7 +1,7 @@
 import React, { createContext, FC, useContext, useEffect, useState } from 'react';
-import { LanguageContextState, LanguageContextConfig, Language } from './types';
-import { getInitialLanguage, updateLanguageQueryParam } from './utils';
-import { errorUseLanguageContext } from './utils';
+import { getInitialLanguage, updateLanguageQueryParam } from './utils/language.utils';
+import { Language, LanguageContextConfig, LanguageContextState } from './types/language.types';
+import { errorUseLanguageContext } from './utils/errors.utils';
 
 export const languageContext = createContext<LanguageContextState | undefined>(undefined);
 

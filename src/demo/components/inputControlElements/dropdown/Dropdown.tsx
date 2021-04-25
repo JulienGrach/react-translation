@@ -1,7 +1,7 @@
 import React, { FC, useRef, useState } from 'react';
 import { StyledOptionsWrapper, StyledDropdown, StyledOption, StyledHead } from './dropdown.styled';
-import {Option} from "./dropdown.types";
-import {useClickOutside} from "../../../hooks/useClickOutside";
+import { Option } from './dropdown.types';
+import { useClickOutside } from '../../../hooks/useClickOutside';
 
 interface Props {
     options: Option[];

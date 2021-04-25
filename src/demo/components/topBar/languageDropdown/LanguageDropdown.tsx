@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import {useLanguageContext} from "../../../../lib/context";
-import {LANGUAGES} from "../../../constants/languages.constants";
-import {Dropdown} from "../../inputControlElements/dropdown/Dropdown";
-import {ucFirst} from "../../../utils/string.utils";
+import { useLanguageContext } from '../../../../lib/context';
+import { LANGUAGES } from '../../../constants/languages.constants';
+import { Dropdown } from '../../inputControlElements/dropdown/Dropdown';
+import { ucFirst } from '../../../utils/string.utils';
 
 export const LanguageDropdown: FC = () => {
     const { language, setLanguage } = useLanguageContext();

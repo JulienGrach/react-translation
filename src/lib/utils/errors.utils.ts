@@ -1,5 +1,6 @@
-import { Language, TFName } from '../types';
 import { AUTHORIZED_HTML_TAGS } from '../constants';
+import { Language } from '../types/language.types';
+import { TFName } from '../types/translationFiles.types';
 
 export const errorObjectGiven = (language: Language, keyPath: string, tFName?: TFName): string =>
     `The key ${keyPath} from ${language}/${tFName} is an object. String expected`;
