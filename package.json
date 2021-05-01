@@ -10,7 +10,7 @@
     "react-translate",
     "i18n"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
