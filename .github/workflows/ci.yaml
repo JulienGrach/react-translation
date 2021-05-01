@@ -17,10 +17,17 @@ jobs:
         with:
           node_version: ${{ matrix.node_version }}
 
-      - name: run CI
-        run: |
-          npm install # or yarn install
-          npm run lint # or yarn lint
-          npm run test # or yarn test
-          npm run build-app # or yarn build-app
-          npm run build # or yarn build
+      - name: Packages install
+        run: npm install # or yarn install
+
+      - name: Linter
+        run: npm run lint # or yarn lint
+
+      #- name: Tests
+        #run: npm run test --passWithNoTests # or yarn test
+
+      - name: Build app
+        run: npm run build-app # or yarn build-app
+
+      - name: Build
+        run: npm run build # or yarn build
