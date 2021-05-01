@@ -1,7 +1,5 @@
-import React, { FC, useRef, useState } from 'react';
-import { StyledOptionsWrapper, StyledDropdown, StyledOption, StyledHead } from './dropdown.styled';
+import React, { FC, useState } from 'react';
 import { Option } from './dropdown.types';
-import { useClickOutside } from '../../../hooks/useClickOutside';
 
 interface Props {
     options: Option[];
@@ -10,32 +8,26 @@ interface Props {
 }
 
 export const Dropdown: FC<Props> = ({ options, defaultOption, onOptionChanged }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [currentOption, setCurrentOption] = useState(defaultOption || options?.[0]);
-    const dropdownRref = useRef<HTMLDivElement>(null);
-    useClickOutside(dropdownRref, () => setIsOpen(false));
+    const [currentOption, setCurrentOption] = useState(defaultOption || options[0]);
 
-    const handleOptionChanged = (option: Option) => {
+    const handleOptionChanged = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const index = e.target.selectedIndex;
+        const label = e.target[index].innerText;
+        const { value } = e.target;
+        const option = { value, label };
         setCurrentOption(option);
         if (onOptionChanged) onOptionChanged(option);
     };
 
     return (
-        <StyledDropdown id="lang-dropdown" isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} ref={dropdownRref}>
-            <StyledHead>
-                <span>{currentOption.label}</span>
-            </StyledHead>
-            {isOpen && (
-                <StyledOptionsWrapper>
-                    {options.map((option) => {
-                        return (
-                            <StyledOption key={`lang-option-${option.label}`} onClick={() => handleOptionChanged(option)}>
-                                {option.label}
-                            </StyledOption>
-                        );
-                    })}
-                </StyledOptionsWrapper>
-            )}
-        </StyledDropdown>
+        <select value={currentOption.value} onChange={(e) => handleOptionChanged(e)}>
+            {options.map((option) => {
+                return (
+                    <option key={`lang-option-${option.label}`} value={option.value}>
+                        {option.label}
+                    </option>
+                );
+            })}
+        </select>
     );
 };
