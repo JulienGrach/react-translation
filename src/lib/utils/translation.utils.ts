@@ -1,9 +1,9 @@
-import { VARIABLE_PREFIX, VARIABLE_SUFFIX } from '../constants';
 import { errorKeyDoesntExists, errorObjectGiven, errorTFNotAvailable, errorVariableisMissing } from './errors.utils';
 import { findKeyPathValueFromTFs, getKeyPathValue, hasTFName, splitAllKeys, splitKeyFullPath } from './keyFullPath.utils';
 import { TFs } from '../types/translationFiles.types';
 import { Language } from '../types/language.types';
 import { TranslationVariables } from '../types/useTranslation.types';
+import { VARIABLE_PREFIX, VARIABLE_SUFFIX } from '../constants/translation.constants';
 
 const translateWithTargetedTFName = (language: Language, keyFullPath: string, tFs: TFs) => {
     const { tFName, keyPath } = splitKeyFullPath(keyFullPath);

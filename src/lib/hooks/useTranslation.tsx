@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { BOLD_TAG, DEFAULT_TF_NAME, ITALIC_TAG, REGEX_HTML_TAGS } from '../constants';
 import { useLanguageContext } from '../context';
 import { TFNames, TFs } from '../types/translationFiles.types';
 import { TranslationVariables, UseTranslationHook } from '../types/useTranslation.types';
@@ -7,6 +6,8 @@ import { importTF } from '../utils/translationFiles.utils';
 import { errorForbiddenHtmlTags } from '../utils/errors.utils';
 import { translate } from '../utils/translation.utils';
 import { createMarkup } from '../utils/html.utils';
+import { DEFAULT_TF_NAME } from '../constants/translationFiles.constants';
+import { BOLD_TAG, ITALIC_TAG, REGEX_HTML_TAGS } from '../constants/html.constants';
 
 export const useTranslation = (tFNames: TFNames = [DEFAULT_TF_NAME]): UseTranslationHook => {
     const { language } = useLanguageContext();

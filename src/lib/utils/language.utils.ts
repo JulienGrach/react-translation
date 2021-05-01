@@ -1,4 +1,4 @@
-import { DEFAULT_QUERY_PARAM } from '../constants';
+import { DEFAULT_QUERY_PARAM } from '../constants/language.constants';
 import { Language, LanguageContextConfig } from '../types/language.types';
 
 export const updateLanguageQueryParam = (value: Language): void => {

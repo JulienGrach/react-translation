@@ -1,7 +1,7 @@
-import { DEFAULT_TF_NAME, KEYS_SEPARATOR, TFS_SEPARATOR } from '../constants';
+import { KEYS_SEPARATOR } from '../constants/translation.constants';
+import { DEFAULT_TF_NAME, TFS_SEPARATOR } from '../constants/translationFiles.constants';
+import { KeyFullPathSplitted, KeyPathValue, KeyPathValueFound, TF, TFs } from '../types/translationFiles.types';
 import { errorKeyPathEmpty, errorTFNameEmpty, errorTooManySeparators } from './errors.utils';
-import { TF, TFs } from '../types/translationFiles.types';
-import { KeyFullPathSplitted, KeyPathValue, KeyPathValueFound } from '../types/keyFullPath.types';
 
 export const getKeyPathValue = (splittedKeys: string[], tF: TF): KeyPathValue => {
     return splittedKeys.reduce((acc: KeyPathValue, splittedKey) => {

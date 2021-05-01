@@ -1,4 +1,8 @@
-import { KeyPathValue } from './keyFullPath.types';
+export type KeyFullPathSplitted = { tFName: TFName; keyPath: string };
+
+export type KeyPathValue = TFContent | string | undefined;
+
+export type KeyPathValueFound = { tF?: TF; value?: KeyPathValue };
 
 export type TFName = string;
 

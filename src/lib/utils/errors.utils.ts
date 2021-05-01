@@ -1,4 +1,4 @@
-import { AUTHORIZED_HTML_TAGS } from '../constants';
+import { AUTHORIZED_HTML_TAGS } from '../constants/html.constants';
 import { Language } from '../types/language.types';
 import { TFName } from '../types/translationFiles.types';
 
